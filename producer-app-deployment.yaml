@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: producerapp-deploy
+spec:
+  selector:
+    matchLabels:
+      app: producerapp-kube
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: producerapp-kube
+    spec:
+      containers:
+        - name: producerapp-kube
+          image: producerapp
+          imagePullPolicy: Never
+          env:
+            - name: HOST_IP
+              value: "172.18.0.1"

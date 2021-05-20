@@ -1,0 +1,24 @@
+version: '3.2'
+services:
+  zookeeper:
+    image: wurstmeister/zookeeper:latest
+    container_name: my-zookeper-yo
+    ports:
+      - "2181:2181"
+  kafka:
+    image: wurstmeister/kafka:2.11-1.1.1
+    container_name: my-kafka-yo
+    ports:
+      - "9092:9092"
+    links:
+      - zookeeper
+    environment:
+      KAFKA_LISTENERS: INSIDE://0.0.0.0:19092,OUTSIDE://0.0.0.0:9092
+      KAFKA_ADVERTISED_LISTENERS: INSIDE://kafka:19092,OUTSIDE://${HOST_IP}:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_CREATE_TOPICS: "Accounts-Topic:1:1,Transactions-Topic:1:1"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+

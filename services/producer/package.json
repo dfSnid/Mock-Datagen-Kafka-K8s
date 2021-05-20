@@ -1,0 +1,29 @@
+{
+  "name": "stk-datagen-local",
+  "version": "1.0.0",
+  "description": "A Mock data Generator for Search Toolkit use cases",
+  "main": "src/producer.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node src/producer.js",
+    "dev": "dotenv npm run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dfSnid/Mock-Datagen-Kafka-K8s.git"
+  },
+  "author": "Snid Chakravarty",
+  "license": "ISC",
+  "devDependencies": {
+    "dotenv-cli": "^4.0.0",
+    "eslint": "^7.26.0",
+    "jest": "^26.6.3"
+  },
+  "dependencies": {
+    "dotenv": "^9.0.2",
+    "kafkajs": "^1.15.0",
+    "mocker-data-generator": "^2.12.0",
+    "xml-js": "^1.6.11",
+    "ip": "^1.1.5"
+  }
+}
