@@ -1,6 +1,6 @@
 # Mock Data Producer app for Kafka
 
-A NodeJS producer app that streams data to Kakfa Topics. A basic Kafka setup is also included.
+A NodeJS producer app that streams data to Kakfa Topics. A local Kafka setup is also included.
 
 ## Pre-requisites and Installs
 
