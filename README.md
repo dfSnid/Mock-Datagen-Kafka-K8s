@@ -1,4 +1,4 @@
-# Mock Data Generator for Kafka
+# Mock Data Producer app for Kafka
 
 A NodeJS producer app that streams data to Kakfa Topics. A basic Kafka setup is also included.
 
